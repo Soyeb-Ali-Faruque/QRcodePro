@@ -1,0 +1,62 @@
+{% extends 'QRcodePro/base.html' %}
+
+{% block title %}Home | QRcodePro{% endblock %}
+
+
+{% block content %}
+    <div class="intro-text">
+        <h1>Welcome to QRcodePro</h1>
+        <p>Explore our services to generate various types of QR codes with ease.</p>
+    </div>
+    <div class="service-box-container">
+        <a href="{% url 'text' %}" class="service-box-link">
+            <div class="service-box">
+                <h3>Text</h3>
+                <p>Create QR codes for text content.</p>
+            </div>
+        </a>
+        <a href="{% url 'email' %}" class="service-box-link">
+            <div class="service-box">
+                <h3>Email</h3>
+                <p>Generate QR codes that link to your email.</p>
+
+            </div>
+        </a>
+        <a href="{% url 'url' %}" class="service-box-link">
+            <div class="service-box">
+                <h3>URL</h3>
+                <p>Generate QR codes for web links.</p>
+            </div>
+        </a>
+        <a href="{% url 'location' %}" class="service-box-link">
+            <div class="service-box">
+                <h3>Location</h3>
+                <p>QR codes with location data.</p>
+            </div>
+        </a>
+        <a href="{% url 'whatsapp' %}" class="service-box-link">
+            <div class="service-box">
+                <h3>WhatsApp</h3>
+                <p>QR codes for WhatsApp messaging.</p>
+            </div>
+        </a>
+        <a href="{% url 'vcard' %}" class="service-box-link">
+            <div class="service-box">
+                <h3>VCard</h3>
+                <p>QR codes for digital business cards.</p>
+            </div>
+        </a>
+        <a href="{% url 'wifi' %}" class="service-box-link">
+            <div class="service-box">
+                <h3>Wi-Fi</h3>
+                <p>Generate QR codes for Wi-Fi login.</p>
+            </div>
+        </a>
+        <a href="{% url 'call' %}" class="service-box-link">
+            <div class="service-box">
+                <h3>Call</h3>
+                <p>QR codes to initiate phone calls.</p>
+            </div>
+        </a>
+    </div>
+{% endblock %}

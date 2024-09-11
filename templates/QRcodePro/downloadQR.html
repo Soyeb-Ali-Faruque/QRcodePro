@@ -1,0 +1,17 @@
+{% extends 'QRcodePro/base.html' %}
+
+{% block title %}Download | QRcodePro{% endblock %}
+{% block content %}
+<div class="qr-code-container">
+    <h1>Your QR Code</h1>
+    <div class="qr-code-preview">
+        <div class="qr-code-overlay">
+            <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+            <div class="qr-code-text">
+                <span class="qr">QRco</span><span class="codepro">dePro</span>
+            </div>
+        </div>
+    </div>
+    <a href="data:image/png;base64,{{ qr_code }}" download="qr_code.png" class="download-btn">Download QR Code</a>
+</div>
+{% endblock %}

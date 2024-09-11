@@ -1,0 +1,291 @@
+{% extends 'QRcodePro/base.html' %}
+
+{% block title %}Documentation{% endblock %}
+
+{% block content %}
+<h1>QRcodePro API Documentation</h1>
+
+<nav class="doc-navigation">
+    <ul>
+        <li><a href="#text-service">Text Service</a></li>
+        <li><a href="#email-service">Email Service</a></li>
+        <li><a href="#url-service">URL Service</a></li>
+        <li><a href="#location-service">Location Service</a></li>
+        <li><a href="#whatsapp-service">WhatsApp Service</a></li>
+        <li><a href="#vcard-service">VCard Service</a></li>
+        <li><a href="#wifi-service">Wi-Fi Service</a></li>
+        <li><a href="#call-service">Call Service</a></li>
+        <li><a href="{% url 'logo-format' %}">Code for encoding and decoding base64/img</a></li>
+    </ul>
+</nav>
+<section id="text-service" class="doc-section">
+    <h2 class="doc-title">Text Service</h2>
+    <p>Generate a QR code for plain text.</p>
+    <p><strong>Note:</strong> QR code customization is optional. If a logo is provided, it should be sent as a base64-encoded string. You can choose the logo shape (Circle or Square) and corner style (Sharp or Rounded).</p>
+    <p><strong>Method:</strong> POST</p>
+    <h3>Request</h3>
+    <pre>
+{
+    #URL for sending Request
+    https://soyebalifaruque.pythonanywhere.com/qrcodepro/api/generate-qr/
+
+
+    "type": "text",
+    "text_content": "Hello, World!",
+    "fill_color": "#000000",
+    "background_color": "#FFFFFF",
+    "logo": "base64encodedLogo",   // Optional: Provide base64-encoded logo if available
+    "logo_shape": "circle",        // Optional: 'circle' or 'square'
+    "logo_corner": "sharp"         // Optional: 'sharp' or 'rounded'
+}
+    </pre>
+    <h3>Response</h3>
+    <pre>
+{
+    "qr_code": "base64encodedQR"
+    "status":"success or fail"
+}
+    </pre>
+</section>
+
+<section id="email-service" class="doc-section">
+    <h2 class="doc-title">Email Service</h2>
+    <p>Generate a QR code for Emailing.</p>
+    <p><strong>Note:</strong> QR code customization is optional. If a logo is provided, it should be sent as a base64-encoded string. You can choose the logo shape (Circle or Square) and corner style (Sharp or Rounded).</p>
+    <p><strong>Method:</strong> POST</p>
+    <h3>Request</h3>
+    <pre>
+{
+    #URL for sending Request
+    https://soyebalifaruque.pythonanywhere.com/qrcodepro/api/generate-qr/
+
+
+
+    "type": "email",
+    "email_address": "abc@example.com",
+    "subject":"Write Subject Here",    //optional You can leave this.
+    "body":"Write content for the email",   //Optional you can this this also.
+    "fill_color": "#000000",
+    "background_color": "#FFFFFF",
+    "logo": "base64encodedLogo",   // Optional: Provide base64-encoded logo if available
+    "logo_shape": "circle",        // Optional: 'circle' or 'square'
+    "logo_corner": "sharp"         // Optional: 'sharp' or 'rounded'
+}
+    </pre>
+    <h3>Response</h3>
+    <pre>
+{
+    "qr_code": "base64encodedQR"
+    "status":"success or fail"
+}
+    </pre>
+</section>
+
+<section id="url-service" class="doc-section">
+    <h2 class="doc-title">URL Service</h2>
+    <p>Generate a QR code for a URL.</p>
+    <p><strong>Note:</strong> QR code customization is optional. If a logo is provided, it should be sent as a base64-encoded string. You can choose the logo shape (Circle or Square) and corner style (Sharp or Rounded).</p>
+    <p><strong>Method:</strong> POST</p>
+    <h3>Request</h3>
+    <pre>
+{
+    #URL for sending Request
+    https://soyebalifaruque.pythonanywhere.com/qrcodepro/api/generate-qr/
+
+
+
+    "type": "url",
+    "url_content": "https://example.com",
+    "fill_color": "#000000",
+    "background_color": "#FFFFFF",
+    "logo": "base64encodedLogo",   // Optional: Provide base64-encoded logo if available
+    "logo_shape": "circle",        // Optional: 'circle' or 'square'
+    "logo_corner": "sharp"         // Optional: 'sharp' or 'rounded'
+}
+    </pre>
+    <h3>Response</h3>
+    <pre>
+{
+    "qr_code": "base64encodedQR"
+    "status":"success or fail"
+}
+    </pre>
+</section>
+
+<section id="location-service" class="doc-section">
+    <h2 class="doc-title">Location Service</h2>
+    <p>Generate a QR code for a location address.</p>
+    <p><strong>Note:</strong> QR code customization is optional. If a logo is provided, it should be sent as a base64-encoded string. You can choose the logo shape (Circle or Square) and corner style (Sharp or Rounded).</p>
+    <p><strong>Method:</strong> POST</p>
+    <h3>Request</h3>
+    <pre>
+{   
+    #URL for sending Request
+    https://soyebalifaruque.pythonanywhere.com/qrcodepro/api/generate-qr/
+
+
+
+    "type": "location",
+    "street_address": "123 Main St, India",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "country": "India",
+    "fill_color": "#000000",
+    "background_color": "#FFFFFF",
+    "logo": "base64encodedLogo",   // Optional: Provide base64-encoded logo if available
+    "logo_shape": "circle",        // Optional: 'circle' or 'square'
+    "logo_corner": "sharp"         // Optional: 'sharp' or 'rounded'
+}
+    </pre>
+    <h3>Response</h3>
+    <pre>
+{
+    "qr_code": "base64encodedQR"
+    "status":"success or fail"
+}
+    </pre>
+</section>
+
+<section id="whatsapp-service" class="doc-section">
+    <h2 class="doc-title">WhatsApp Service</h2>
+    <p>Generate a QR code for a WhatsApp number.</p>
+    <p><strong>Note:</strong> QR code customization is optional. If a logo is provided, it should be sent as a base64-encoded string. You can choose the logo shape (Circle or Square) and corner style (Sharp or Rounded).</p>
+    <p><strong>Method:</strong> POST</p>
+    <h3>Request</h3>
+    <pre>
+{   
+    #URL for sending Request
+    https://soyebalifaruque.pythonanywhere.com/qrcodepro/api/generate-qr/
+
+
+
+
+    "type": "whatsapp",
+    "whatsapp_number": "+12345678900",
+    "default_message": "Hello!",
+    "fill_color": "#000000",
+    "background_color": "#FFFFFF",
+    "logo": "base64encodedLogo",   // Optional: Provide base64-encoded logo if available
+    "logo_shape": "circle",        // Optional: 'circle' or 'square'
+    "logo_corner": "sharp"         // Optional: 'sharp' or 'rounded'
+}
+    </pre>
+    <h3>Response</h3>
+    <pre>
+{
+    "qr_code": "base64encodedQR"
+    "status":"success or fail"
+}
+    </pre>
+</section>
+
+<section id="vcard-service" class="doc-section">
+    <h2 class="doc-title">VCard Service</h2>
+    <p>Generate a QR code for a VCard.</p>
+    <p><strong>Note:</strong> QR code customization is optional. If a logo is provided, it should be sent as a base64-encoded string. You can choose the logo shape (Circle or Square) and corner style (Sharp or Rounded).</p>
+    <p><strong>Method:</strong> POST</p>
+    <h3>Request</h3>
+    <pre>
+{
+    #URL for sending Request
+    https://soyebalifaruque.pythonanywhere.com/qrcodepro/api/generate-qr/
+
+
+
+
+    "type": "vcard",
+    "vcard_name": "John Doe",
+    "vcard_phone": "+12345678900",
+    "vcard_email": "johndoe@example.com",
+    "vcard_organization": "Example Corp",
+    "vcard_title": "Software Engineer",
+    "vcard_address_street": "123 Main St",
+    "vcard_address_city": "Mumbai",
+    "vcard_address_state": "Maharashtra",
+    "vcard_address_country": "India",
+    "vcard_website": "https://example.com",
+    "fill_color": "#000000",
+    "background_color": "#FFFFFF",
+    "logo": "base64encodedLogo",   // Optional: Provide base64-encoded logo if available
+    "logo_shape": "circle",        // Optional: 'circle' or 'square'
+    "logo_corner": "sharp"         // Optional: 'sharp' or 'rounded'
+}
+    </pre>
+    <h3>Response</h3>
+    <pre>
+{
+    "qr_code": "base64encodedQR"
+    "status":"success or fail"
+}
+    </pre>
+</section>
+
+<section id="wifi-service" class="doc-section">
+    <h2 class="doc-title">WiFi Service</h2>
+    <p>Generate a QR code for WiFi credentials.</p>
+    <p><strong>Note:</strong> QR code customization is optional. If a logo is provided, it should be sent as a base64-encoded string. You can choose the logo shape (Circle or Square) and corner style (Sharp or Rounded).</p>
+    <p><strong>Method:</strong> POST</p>
+    <h3>Request</h3>
+    <pre>
+{   
+    #URL for sending Request
+    https://soyebalifaruque.pythonanywhere.com/qrcodepro/api/generate-qr/
+
+
+
+
+    "type": "wifi",
+    "wifi_ssid": "MyNetwork",
+    "encryption": "WPA",
+    "wifi_password": "password123",
+    "fill_color": "#000000",
+    "background_color": "#FFFFFF",
+    "logo": "base64encodedLogo",   // Optional: Provide base64-encoded logo if available
+    "logo_shape": "circle",        // Optional: 'circle' or 'square'
+    "logo_corner": "sharp"         // Optional: 'sharp' or 'rounded'
+}
+    </pre>
+    <h3>Response</h3>
+    <pre>
+{
+    "qr_code": "base64encodedQR"
+    "status":"success or fail"
+}
+    </pre>
+</section>
+
+<section id="call-service" class="doc-section">
+    <h2 class="doc-title">Call Service</h2>
+    <p>Generate a QR code for a phone number.</p>
+    <p><strong>Note:</strong> QR code customization is optional. If a logo is provided, it should be sent as a base64-encoded string. You can choose the logo shape (Circle or Square) and corner style (Sharp or Rounded).</p>
+    <p><strong>Method:</strong> POST</p>
+    <h3>Request</h3>
+    <pre>
+{
+    #URL for sending Request
+    https://soyebalifaruque.pythonanywhere.com/qrcodepro/api/generate-qr/
+
+
+
+    
+    "type": "call",
+    "phone_number": "+12345678900",
+    "fill_color": "#000000",
+    "background_color": "#FFFFFF",
+    "logo": "base64encodedLogo",   // Optional: Provide base64-encoded logo if available
+    "logo_shape": "circle",        // Optional: 'circle' or 'square'
+    "logo_corner": "sharp"         // Optional: 'sharp' or 'rounded'
+}
+    </pre>
+    <h3>Response</h3>
+    <pre>
+{
+    "qr_code": "base64encodedQR"
+    "status":"success or fail"
+}
+    </pre>
+</section>
+
+
+
+{% endblock %}

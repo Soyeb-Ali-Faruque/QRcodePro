@@ -1,0 +1,67 @@
+.qr-code-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical centering */
+    align-items: center;     /* Horizontal centering */
+    min-height: 50vh;       /* Ensure the container takes up the full viewport height */
+    text-align: center;
+    padding: 40px;
+}
+
+.qr-code-preview {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+}
+
+.qr-code-overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.qr-code-overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(5px); /* Apply blur effect */
+}
+
+.qr-code-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.qr-code-text .qr {
+    color: skyblue;
+}
+
+.qr-code-text .codepro {
+    color: white;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: skyblue;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px; /* Add margin for spacing */
+}
+
+.download-btn:hover {
+    background-color: #0099ff;
+    color: white;
+}

@@ -1,0 +1,255 @@
+/* Existing CSS for QR Code Form Container */
+.qrform-container {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Existing CSS for Form Layout */
+.qrform {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Existing CSS for Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px; /* Updated margin for spacing */
+}
+
+/* Existing CSS for Labels */
+.form-group label {
+    font-size: 1.2em;
+    color: skyblue;
+}
+
+/* Existing CSS for Input and Textarea Fields */
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Existing CSS for Submit Button */
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background: skyblue;
+    color: black;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: white;
+    color: black;
+}
+
+/* Existing CSS for Customization Container */
+.customization-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid skyblue;
+}
+
+.customization-container h2 {
+    color: skyblue;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* Existing CSS for Form Elements in Customization */
+.customization-container .form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customization-container .form-group label {
+    font-size: 1em;
+    color: skyblue;
+    width: 150px;
+}
+
+.customization-container .form-group input[type="color"],
+.customization-container .form-group input[type="file"] {
+    width: 100%;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Existing CSS for Logo Preview in Customization */
+.customization-container .logo-preview {
+    display: block;
+    margin-top: 10px;
+    max-width: 100px;
+    max-height: 100px;
+    border: 2px solid skyblue;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+/* Existing CSS for Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Existing CSS for Customize Link */
+.customize-link {
+    display: block;
+    color: skyblue;
+    text-decoration: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.customize-link:hover {
+    text-decoration: underline;
+}
+
+/* Existing CSS for Customization Container (Additional) */
+.customization-container {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Existing CSS for International Telephone Input */
+.iti {
+    width: 100%;
+}
+
+.iti .iti__selected-flag {
+    background-color: transparent;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+}
+
+.iti .iti__flag-container {
+    border-radius: 5px;
+}
+
+.iti .iti__country-name {
+    color: black;
+}
+
+.iti__input {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.iti__list {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgb(17, 17, 17);
+    border-radius: 5px;
+}
+
+.iti__list .iti__country {
+    border-bottom: 1px solid skyblue;
+}
+
+.iti__list .iti__country:hover {
+    background-color: rgba(16, 29, 115, 0.6);
+}
+
+/* Existing CSS for Country Code Display */
+#selected-country-info {
+    font-size: 1em;
+    color: skyblue;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Existing CSS for QR Code Preview */
+.qr-code-preview {
+    width: 100px;
+    height: 100px;
+    background: #eeeeee;
+    border: 1px solid #cccccc;
+    margin-bottom: 20px;
+}
+
+/* New CSS for File Upload Input and Preview */
+.form-group input[type="file"] {
+    border: 1px solid skyblue; /* Border color matching the design */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px; /* Padding for better appearance */
+    background: rgba(255, 255, 255, 0.1); /* Background color */
+    color: white; /* Text color */
+    font-size: 1em; /* Font size for consistency */
+}
+
+.logo-preview {
+    display: block; /* Ensures the image is displayed */
+    margin-top: 10px; /* Space above the preview */
+    max-width: 150px; /* Increased size for better visibility */
+    max-height: 150px; /* Increased size for better visibility */
+    border: 2px solid skyblue; /* Border color matching the design */
+    border-radius: 5px; /* Rounded corners */
+    object-fit: contain; /* Ensures the image fits within the container */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background for visibility */
+}
+/* New CSS for Logo Shape Selection */
+#logo-shape-container {
+    margin-top: 10px; /* Space above the selection fields */
+}
+
+/* Style for the Logo Shape Select Field */
+#logo-shape {
+    padding: 10px; /* Padding for a comfortable click area */
+    border: 1px solid skyblue; /* Border color matching the design */
+    border-radius: 5px; /* Rounded corners for consistency */
+    background: white; /* Light transparent background */
+    color: black; /* White text color */
+    font-size: 1em; /* Font size consistent with other input fields */
+    width: 100%; /* Full width of the parent container */
+}
+
+/* Hover Effect for Select Field */
+#logo-shape:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly darker background on hover */
+}
+
+/* Style for the Logo Corner Select Field */
+#logo-corner-container {
+    margin-top: 10px; /* Space above the selection fields */
+}
+
+#logo-corner {
+    padding: 10px; /* Padding for a comfortable click area */
+    border: 1px solid skyblue; /* Border color matching the design */
+    border-radius: 5px; /* Rounded corners for consistency */
+    background: white; /* Light transparent background */
+    color: black; /* White text color */
+    font-size: 1em; /* Font size consistent with other input fields */
+    width: 100%; /* Full width of the parent container */
+}
+
+/* Hover Effect for Select Field */
+#logo-corner:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly darker background on hover */
+}
+
+

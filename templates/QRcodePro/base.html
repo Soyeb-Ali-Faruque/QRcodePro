@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+
+    <!-----------------------------------Internal css-------------------------------------------------------------------->
+    <link rel="stylesheet" href="{% static 'QRcodePro/css/headerAndfooter.css' %}">
+    <link rel="stylesheet" href="{% static 'QRcodePro/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'QRcodePro/css/qrForm.css' %}">
+    <link rel="stylesheet" href="{% static 'QRcodePro/css/downloadQR.css' %}">
+    <link rel="stylesheet" href="{% static 'QRcodePro/css/terms_conditions.css' %}">
+    <link rel="stylesheet" href="{% static 'QRcodePro/css/privacy_policy.css' %}">
+    <link rel="stylesheet" href="{% static 'QRcodePro/css/api_documentation.css' %}">
+    <link rel="stylesheet" href="{% static 'QRcodePro/css/api_logoEncodingDecoding.css' %}">
+
+    <!------------------------------------------External css-------------------------------------------------------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
+
+</head>
+<body>
+    
+   
+<header>
+    <div class="logo">
+        <img src="{% static 'QRcodePro/image/QRcodePro.jpg' %}" alt="QRcodePro Logo">
+    </div>
+    <div class="logo-text">
+        <span class="qrco">QRco</span><span class="depro">dePro</span>
+    </div>
+
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+        </ul>
+    </nav>
+        
+</header>
+
+
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <div class="footer-section">
+        <h4>APIs for developers</h4>
+        <ul>
+            <li><a href="{% url 'api-docs' %}">APIs Documentation</a></li>
+            <li><a href="{% url 'logo-format' %}">Image encoding and decoding</a></li>
+            
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h4>Important Links</h4>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'text' %}">Text to QR</a></li>
+            <li><a href="{% url 'url' %}">URL to QR</a></li>
+            <li><a href="{% url 'location' %}">Location to QR</a></li>
+            <li><a href="{% url 'whatsapp' %}">WhatsApp to QR</a></li>
+            <li><a href="{% url 'vcard' %}">VCard to QR</a></li>
+            <li><a href="{% url 'wifi' %}">WiFi to QR</a></li>
+            <li><a href="{% url 'call' %}">Call to QR</a></li>
+            <li><a href="{% url 'terms-and-conditions' %}">Terms And Conditions</a></li>
+            <li><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+            
+        </ul>
+    </div>
+
+    
+    <div class="footer-section">
+        <h4>Contact Me</h4>
+        <div class="contact-info">
+            <p>Tech Email: <a href="mailto:s5tech.contactme@gmail.com">s5tech.contactme@gmail.com</a></p>
+            <p>Professional Email: <a href="mailto:soyebalifaruque@gmail.com">soyebalifaruque@gmail.com</a></p>
+        </div>
+    </div>
+
+    <div class="footer-section">
+        <h4>My Projects</h4>
+        <ul>
+            <li><a href="https://pdfmaker.pythonanywhere.com/">PDF Maker</a></li>
+            <li><a href="https://soyebalifaruque.pythonanywhere.com/myappstore/app/tik-tak-toe-game">Tik Tac Toe android game</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section social-media-icons">
+        <h4>Connect with Me</h4>
+        <a href="https://www.instagram.com/soyeb_s5" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/Soyeb-Ali-Faruque" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/soyeb-ali-faruque-296356307" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/916291473429?text=Hello%20I%20want%20to%20connect%20with%20you" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          
+    </div>
+</footer>   
+
+<!----------------------------------Internal js--------------------------------------------------------------->
+
+<script src="{% static 'QRcodePro/js/email_validation.js' %}"></script>
+<script src="{% static 'QRcodePro/js/url_validation.js' %}"></script>
+<script src="{% static 'QRcodePro/js/whatsapp_validation.js' %}"></script>
+<script src="{% static 'QRcodePro/js/call_validation.js' %}"></script>
+<script src="{% static 'QRcodePro/js/wifi_validation.js' %}"></script>
+<script src="{% static 'QRcodePro/js/vcard_validation.js' %}"></script>
+<script src="{% static 'QRcodePro/js/qr_handler.js' %}"></script>
+<script src="{% static 'QRcodePro/js/api_documentation.js' %}"></script>
+<script src="{% static 'QRcodePro/js/api_logoEncodingDecoding.js' %}"></script>
+
+
+
+<!--------------------------------------External js------------------------------------------------------------->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% extends "QRcodePro/base.html" %}
+
+{% block title %}Formatting the Logo File{% endblock %}
+
+{% block content %}
+<main id="main-content">
+    <section id="formatting-examples" class="examples-container">
+        <h2 class="examples-title">Formatting the Logo File</h2>
+        
+        <!-- Encoding Section with Language Selection -->
+        <div class="example-card">
+            <h3 class="example-subtitle">Image File Encoding</h3>
+            <div class="language-selector">
+                <label for="language-encoding">Choose Language:</label>
+                <select id="language-encoding" class="language-select" onchange="changeEncodingLanguage()">
+                    <option value="java">Java</option>
+                    <option value="python">Python</option>
+                    <option value="kotlin">Kotlin</option>
+                    <option value="go">Go</option>
+                    <option value="csharp">C#</option>
+                    <option value="ruby">ruby</option>
+                    <option value="javaScript">javaScript</option>
+                    <option value="php">php</option>
+                    <option value="swift">swift</option>
+                </select>
+            </div>
+            <pre class="code-block" id="encoding-code-block">
+                <!-- Java Encoding Code by default -->
+<code>
+import java.util.Base64;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.io.IOException;
+
+public class Base64ImageExample {
+    public static void main(String[] args) throws IOException {
+        byte[] fileContent = Files.readAllBytes(Paths.get("image.jpg"));
+        String encodedString = Base64.getEncoder().encodeToString(fileContent);
+        System.out.println("Encoded Image: " + encodedString);
+    }
+}
+</code>
+            </pre>
+        </div>
+
+        <!-- Decoding Section with Language Selection -->
+        <div class="example-card">
+            <h3 class="example-subtitle">Image File Decoding</h3>
+            <div class="language-selector">
+                <label for="language-decoding">Choose Language:</label>
+                <select id="language-decoding" class="language-select" onchange="changeDecodingLanguage()">
+                    <option value="java">Java</option>
+                    <option value="python">Python</option>
+                    <option value="kotlin">Kotlin</option>
+                    <option value="go">Go</option>
+                    <option value="csharp">C#</option>
+                    <option value="ruby">ruby</option>
+                    <option value="javaScript">javaScript</option>
+                    <option value="php">php</option>
+                    <option value="swift">swift</option>
+                </select>
+            </div>
+            <pre class="code-block" id="decoding-code-block">
+                <!-- Java Decoding Code by default -->
+<code>
+import java.util.Base64;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.io.IOException;
+import java.nio.file.StandardOpenOption;
+
+public class Base64ImageDecoder {
+    public static void main(String[] args) throws IOException {
+        String encodedString = "Base64EncodedImageString";
+        byte[] decodedBytes = Base64.getDecoder().decode(encodedString);
+        Files.write(Paths.get("decodedImage.jpg"), decodedBytes, StandardOpenOption.CREATE);
+    }
+}
+</code>
+            </pre>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,173 @@
+/* header_footer.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, skyblue, black);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: black;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    margin-right: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logo img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.logo-text {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.logo-text .qrco {
+    color: skyblue;
+}
+
+.logo-text .depro {
+    color: white;
+}
+
+
+
+
+
+
+.navbar {
+    position: center; /* or fixed if you want it to stay in place on scroll */
+    right: 0;
+
+}
+
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Align items horizontally */
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white; /* Adjust color as needed */
+    font-weight: bold;
+    font-size: 22px;
+    padding: 30px;
+}
+
+.nav-links a:hover {
+    color: skyblue; /* Adjust hover color as needed */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    background: black;
+    color: skyblue;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-section {
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: white;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: skyblue;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: white;
+}
+
+.social-media-icons a {
+    margin: 0 10px;
+    color: skyblue;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-media-icons a:hover {
+    color: white;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    color: white;
+}
+
+.contact-info a {
+    color: skyblue;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}

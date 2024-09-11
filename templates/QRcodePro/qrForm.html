@@ -1,0 +1,454 @@
+{% extends 'QRcodePro/base.html' %}
+{% block title %}Generate QR Code | QRcodePro{% endblock %}
+
+
+{% block content %}
+<div class="qrform-container">
+    <div class="intro-text">
+        <h1>Create Your QR Code</h1>
+        <p>Select the type of QR code you want to create and fill out the necessary details.</p>
+    </div>
+<!----------------------------------------For Text------------------------------------------------------------------------- -->
+    {% if type == "Text" %}
+    <form method="post" class="qrform" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="text-content">Enter Text:</label>
+            <textarea id="text-content" name="text_content" rows="4" required></textarea>
+        </div>
+        <a href="#" class="customize-link">Tap here to customize your QR code</a>
+        <div class="customization-container hidden">
+            <h2>Customize Your QR Code</h2>
+            <div class="form-group">
+                <label for="fill-color">Fill Color:</label>
+                <input type="color" id="fill-color" name="fill_color" value="#000000">
+            </div>
+            <div class="form-group">
+                <label for="background-color">Background Color:</label>
+                <input type="color" id="background-color" name="background_color" value="#ffffff">
+            </div>
+            <div class="form-group">
+                <label for="logo-upload">Upload Logo:</label>
+                <input type="file" id="logo-upload" name="logo" accept="image/*">
+                <img id="logo-preview" class="logo-preview" src="#" alt="Logo Preview" style="display: none;">
+            </div>
+        <div class="form-group" id="logo-shape-container" style="display: none;">
+            <label for="logo-shape">Logo Shape:</label>
+            <select id="logo-shape" name="logo_shape">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="logo-corner-container" style="display: none;">
+            <label for="logo-corner">Logo Corner Style:</label>
+            <select id="logo-corner" name="logo_corner">
+                <option value="sharp">Sharp</option>
+                <option value="rounded">Rounded</option>
+            </select>
+        </div>
+        </div>
+        <button type="submit">Generate QR Code</button>
+    </form>
+
+<!--------------------------------------------------------For Email----------------------------------------------------------->
+{% elif type == "Email" %}
+<form method="post" class="qrform" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="email-address">Enter Email Address:</label>
+        <input type="email" id="email-address" name="email_address" required>
+    </div>
+    <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject">
+    </div>
+    <div class="form-group">
+        <label for="body">Body:</label>
+        <textarea id="body" name="body" rows="4"></textarea>
+    </div>
+    <a href="#" class="customize-link">Tap here to customize your QR code</a>
+    <div class="customization-container hidden">
+        <h2>Customize Your QR Code</h2>
+        <div class="form-group">
+            <label for="fill-color">Fill Color:</label>
+            <input type="color" id="fill-color" name="fill_color" value="#000000">
+        </div>
+        <div class="form-group">
+            <label for="background-color">Background Color:</label>
+            <input type="color" id="background-color" name="background_color" value="#ffffff">
+        </div>
+        <div class="form-group">
+            <label for="logo-upload">Upload Logo:</label>
+            <input type="file" id="logo-upload" name="logo" accept="image/*">
+            <img id="logo-preview" class="logo-preview" src="#" alt="Logo Preview" style="display: none;">
+        </div>
+        
+        <!-- New Logo Shape Selection -->
+        <div class="form-group" id="logo-shape-container" style="display: none;">
+            <label for="logo-shape">Logo Shape:</label>
+            <select id="logo-shape" name="logo_shape">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="logo-corner-container" style="display: none;">
+            <label for="logo-corner">Logo Corner Style:</label>
+            <select id="logo-corner" name="logo_corner">
+                <option value="sharp">Sharp</option>
+                <option value="rounded">Rounded</option>
+            </select>
+        </div>
+        
+    </div>
+    <button type="submit">Generate QR Code</button>
+</form>
+
+
+
+    <!----------------------------------------------------For URL---------------------------------------------------------------->
+
+    {% elif type == "URL" %}
+    <form method="post" class="qrform" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="url">Enter URL:</label>
+            <input type="url" id="url" name="url" placeholder="https://example.com " required>
+        </div>
+        <a href="#" class="customize-link">Tap here to customize your QR code</a>
+        <div class="customization-container hidden">
+            <h2>Customize Your QR Code</h2>
+            <div class="form-group">
+                <label for="fill-color">Fill Color:</label>
+                <input type="color" id="fill-color" name="fill_color" value="#000000">
+            </div>
+            <div class="form-group">
+                <label for="background-color">Background Color:</label>
+                <input type="color" id="background-color" name="background_color" value="#ffffff">
+            </div>
+            <div class="form-group">
+                <label for="logo-upload">Upload Logo:</label>
+                <input type="file" id="logo-upload" name="logo" accept="image/*">
+                <img id="logo-preview" class="logo-preview" src="#" alt="Logo Preview" style="display: none;">
+            </div>
+             <!-- New Logo Shape Selection -->
+        <div class="form-group" id="logo-shape-container" style="display: none;">
+            <label for="logo-shape">Logo Shape:</label>
+            <select id="logo-shape" name="logo_shape">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="logo-corner-container" style="display: none;">
+            <label for="logo-corner">Logo Corner Style:</label>
+            <select id="logo-corner" name="logo_corner">
+                <option value="sharp">Sharp</option>
+                <option value="rounded">Rounded</option>
+            </select>
+        </div>
+        </div>
+        <button type="submit">Generate QR Code</button>
+    </form>
+    
+
+
+
+
+<!-----------------------------------------For Location----------------------------------------------------------------------->
+    {% elif type == "Location" %}
+    <form method="post" class="qrform" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="street-address">Street Address:</label>
+            <input type="text" id="street-address" name="street_address" placeholder="e.g., 123 Main St, India" required>
+        </div>
+        <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="e.g., Mumbai" required>
+        </div>
+        <div class="form-group">
+            <label for="state">State/Province:</label>
+            <input type="text" id="state" name="state" placeholder="e.g., Maharashtra">
+        </div>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" placeholder="e.g., India" required>
+        </div>
+        <a href="#" class="customize-link">Tap here to customize your QR code</a>
+        <div class="customization-container hidden">
+            <h2>Customize Your QR Code</h2>
+            <div class="form-group">
+                <label for="fill-color">Fill Color:</label>
+                <input type="color" id="fill-color" name="fill_color" value="#000000">
+            </div>
+            <div class="form-group">
+                <label for="background-color">Background Color:</label>
+                <input type="color" id="background-color" name="background_color" value="#ffffff">
+            </div>
+            <div class="form-group">
+                <label for="logo-upload">Upload Logo:</label>
+                <input type="file" id="logo-upload" name="logo" accept="image/*">
+                <img id="logo-preview" class="logo-preview" src="#" alt="Logo Preview" style="display: none;">
+            </div>
+             <!-- New Logo Shape Selection -->
+        <div class="form-group" id="logo-shape-container" style="display: none;">
+            <label for="logo-shape">Logo Shape:</label>
+            <select id="logo-shape" name="logo_shape">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="logo-corner-container" style="display: none;">
+            <label for="logo-corner">Logo Corner Style:</label>
+            <select id="logo-corner" name="logo_corner">
+                <option value="sharp">Sharp</option>
+                <option value="rounded">Rounded</option>
+            </select>
+        </div>
+        </div>
+        <button type="submit">Generate QR Code</button>
+    </form>
+    
+    
+<!----------------------------------------------------For WhatsApp-------------------------------------------------------->
+    {% elif type == "WhatsApp" %}
+    <form method="post" class="qrform" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="whatsapp-number">Enter WhatsApp Number:</label>
+            <input type="tel" id="whatsapp-number" name="whatsapp_number" placeholder="e.g., +12345678900" required>
+        </div>
+        <div class="form-group">
+            <label for="default-message">Default Message (optional):</label>
+            <input type="text" id="default-message" name="default_message" placeholder="Enter your default message">
+        </div>
+        <a href="#" class="customize-link">Tap here to customize your QR code</a>
+        <div class="customization-container hidden">
+            <h2>Customize Your QR Code</h2>
+            <div class="form-group">
+                <label for="fill-color">Fill Color:</label>
+                <input type="color" id="fill-color" name="fill_color" value="#000000">
+            </div>
+            <div class="form-group">
+                <label for="background-color">Background Color:</label>
+                <input type="color" id="background-color" name="background_color" value="#ffffff">
+            </div>
+            <div class="form-group">
+                <label for="logo-upload">Upload Logo:</label>
+                <input type="file" id="logo-upload" name="logo" accept="image/*">
+                <img id="logo-preview" class="logo-preview" src="#" alt="Logo Preview" style="display: none;">
+            </div>
+             <!-- New Logo Shape Selection -->
+        <div class="form-group" id="logo-shape-container" style="display: none;">
+            <label for="logo-shape">Logo Shape:</label>
+            <select id="logo-shape" name="logo_shape">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="logo-corner-container" style="display: none;">
+            <label for="logo-corner">Logo Corner Style:</label>
+            <select id="logo-corner" name="logo_corner">
+                <option value="sharp">Sharp</option>
+                <option value="rounded">Rounded</option>
+            </select>
+        </div>
+        </div>
+        <button type="submit">Generate QR Code</button>
+    </form>
+    
+
+
+<!--------------------------------------------For VCard--------------------------------------------------------------------->
+    {% elif type == "VCard" %}
+    <form method="post" class="qrform" id="vcard-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="vcard-name">Full Name:</label>
+            <input type="text" id="vcard-name" name="vcard_name" placeholder="Enter Full Name" required pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces">
+        </div>
+        <div class="form-group">
+            <label for="vcard-phone">Phone Number:</label>
+            <input type="tel" id="vcard-phone" name="vcard_phone" placeholder="Enter Phone Number" required>
+        </div>
+        <div class="form-group">
+            <label for="vcard-email">Email Address:</label>
+            <input type="email" id="vcard-email" name="vcard_email" placeholder="Enter Email Address" required>
+        </div>
+        <div class="form-group">
+            <label for="vcard-organization">Organization:</label>
+            <input type="text" id="vcard-organization" name="vcard_organization" placeholder="Enter Organization" required>
+        </div>
+        <div class="form-group">
+            <label for="vcard-title">Job Title:</label>
+            <input type="text" id="vcard-title" name="vcard_title" placeholder="Enter Job Title" required>
+        </div>
+        <div class="form-group">
+            <label for="vcard-address-street">Street Address:</label>
+            <input type="text" id="vcard-address-street" name="vcard_address_street" placeholder="Enter Street Address" required>
+        </div>
+        <div class="form-group">
+            <label for="vcard-address-city">City:</label>
+            <input type="text" id="vcard-address-city" name="vcard_address_city" placeholder="Enter City" required pattern="[A-Za-z\s]+" title="City should only contain letters and spaces">
+        </div>
+        <div class="form-group">
+            <label for="vcard-address-state">State:</label>
+            <input type="text" id="vcard-address-state" name="vcard_address_state" placeholder="Enter State" required pattern="[A-Za-z\s]+" title="State should only contain letters and spaces">
+        </div>
+        <div class="form-group">
+            <label for="vcard-address-country">Country:</label>
+            <input type="text" id="vcard-address-country" name="vcard_address_country" placeholder="Enter Country" required pattern="[A-Za-z\s]+" title="Country should only contain letters and spaces">
+        </div>
+        <div class="form-group">
+            <label for="vcard-website">Website:</label>
+            <input type="url" id="vcard-website" name="vcard_website" placeholder="Enter Website URL">
+        </div>
+        <a href="#" class="customize-link">Tap here to customize your QR code</a>
+        <div class="customization-container hidden">
+            <h2>Customize Your QR Code</h2>
+            <div class="form-group">
+                <label for="fill-color">Fill Color:</label>
+                <input type="color" id="fill-color" name="fill_color" value="#000000">
+            </div>
+            <div class="form-group">
+                <label for="background-color">Background Color:</label>
+                <input type="color" id="background-color" name="background_color" value="#ffffff">
+            </div>
+            <div class="form-group">
+                <label for="logo-upload">Upload Logo:</label>
+                <input type="file" id="logo-upload" name="logo" accept="image/*">
+                <img id="logo-preview" class="logo-preview" src="#" alt="Logo Preview" style="display: none;">
+            </div>
+             <!-- New Logo Shape Selection -->
+        <div class="form-group" id="logo-shape-container" style="display: none;">
+            <label for="logo-shape">Logo Shape:</label>
+            <select id="logo-shape" name="logo_shape">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="logo-corner-container" style="display: none;">
+            <label for="logo-corner">Logo Corner Style:</label>
+            <select id="logo-corner" name="logo_corner">
+                <option value="sharp">Sharp</option>
+                <option value="rounded">Rounded</option>
+            </select>
+        </div>
+        </div>
+        <button type="submit">Generate QR Code</button>
+    </form>
+    
+<!-----------------------------------------------For WiFi---------------------------------------------------------------------->
+    {% elif type == "WiFi" %}
+<form method="post" class="qrform" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="wifi-ssid">Wi-Fi SSID:</label>
+        <input type="text" id="wifi-ssid" name="wifi_ssid" placeholder="Enter Wi-Fi SSID" required>
+    </div>
+    <div class="form-group">
+        <label for="encryption">Encryption Type:</label>
+        <select id="encryption" name="encryption" required>
+            <option value="WPA">WPA/WPA2</option>
+            <option value="WEP">WEP</option>
+            <option value="nopass">No Password</option>
+        </select>
+    </div>
+    <div class="form-group" id="wifi-password-container">
+        <label for="wifi-password">Wi-Fi Password:</label>
+        <input type="password" id="wifi-password" name="wifi_password" placeholder="Enter Wi-Fi Password">
+    </div>
+    <a href="#" class="customize-link">Tap here to customize your QR code</a>
+    <div class="customization-container hidden">
+        <h2>Customize Your QR Code</h2>
+        <div class="form-group">
+            <label for="fill-color">Fill Color:</label>
+            <input type="color" id="fill-color" name="fill_color" value="#000000">
+        </div>
+        <div class="form-group">
+            <label for="background-color">Background Color:</label>
+            <input type="color" id="background-color" name="background_color" value="#ffffff">
+        </div>
+        <div class="form-group">
+            <label for="logo-upload">Upload Logo:</label>
+            <input type="file" id="logo-upload" name="logo" accept="image/*">
+            <img id="logo-preview" class="logo-preview" src="#" alt="Logo Preview" style="display: none;">
+        </div>
+         <!-- New Logo Shape Selection -->
+         <div class="form-group" id="logo-shape-container" style="display: none;">
+            <label for="logo-shape">Logo Shape:</label>
+            <select id="logo-shape" name="logo_shape">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="logo-corner-container" style="display: none;">
+            <label for="logo-corner">Logo Corner Style:</label>
+            <select id="logo-corner" name="logo_corner">
+                <option value="sharp">Sharp</option>
+                <option value="rounded">Rounded</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit">Generate QR Code</button>
+</form>
+
+
+
+<!-------------------------------------------------For Call------------------------------------------------->
+{% elif type == "Call" %}
+<form method="post" class="qrform" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="phone-number">Enter Phone Number:</label>
+        <input type="tel" id="phone-number" name="phone_number" required>
+    </div>
+    <a href="#" class="customize-link">Tap here to customize your QR code</a>
+    <div class="customization-container hidden">
+        <h2>Customize Your QR Code</h2>
+        <div class="form-group">
+            <label for="fill-color">Fill Color:</label>
+            <input type="color" id="fill-color" name="fill_color" value="#000000">
+        </div>
+        <div class="form-group">
+            <label for="background-color">Background Color:</label>
+            <input type="color" id="background-color" name="background_color" value="#ffffff">
+        </div>
+        <div class="form-group">
+            <label for="logo-upload">Upload Logo:</label>
+            <input type="file" id="logo-upload" name="logo" accept="image/*">
+            <img id="logo-preview" class="logo-preview" src="#" alt="Logo Preview" style="display: none;">
+        </div>
+        
+        <!-- New Logo Shape Selection -->
+        <div class="form-group" id="logo-shape-container" style="display: none;">
+            <label for="logo-shape">Logo Shape:</label>
+            <select id="logo-shape" name="logo_shape">
+                <option value="circle">Circle</option>
+                <option value="square">Square</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="logo-corner-container" style="display: none;">
+            <label for="logo-corner">Logo Corner Style:</label>
+            <select id="logo-corner" name="logo_corner">
+                <option value="sharp">Sharp</option>
+                <option value="rounded">Rounded</option>
+            </select>
+        </div>
+        
+    </div>
+    <button type="submit">Generate QR Code</button>
+</form>
+
+{% else %}
+    <p>Invalid QR code type selected. Please choose a valid option.</p>
+{% endif %}
+</div>
+{% endblock %}
