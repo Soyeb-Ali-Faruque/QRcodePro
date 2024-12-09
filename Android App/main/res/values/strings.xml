@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">QRcodePro</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_titleleft">QRco</string>
+    <string name="nav_header_titleright">dePro</string>
+    <string name="nav_header_subtitle">Generate your QR with ease.</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="generate_qr">Generate your QR</string>
+    <string name="download_qr">Download your QR</string>
+
+
+    //Slide Bar navigation Fields names
+    <string name="menu_home">Home</string>
+    <string name="menu_website">Website-QRcodePro</string>
+    <string name="menu_api">Get API</string>
+    <string name="menu_email">Email To</string>
+    <string name="menu_terms_and_conditions">Terms And Conditions</string>
+    <string name="menu_privacy_policy">Privacy Policy</string>
+    <string name="menu_social_media">Social Media</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_splash_screen">splashScreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.qr_services.download_qrFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- FrameLayout to overlay TextViews on ImageView -->
+        <FrameLayout
+            android:layout_width="258dp"
+            android:layout_height="254dp"
+            android:layout_marginBottom="16dp">
+
+            <!-- ImageView -->
+            <ImageView
+                android:id="@+id/qrView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:src="@tools:sample/avatars" />
+
+            <!-- LinearLayout for centered TextViews -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/lightWhite"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <!-- First TextView -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nav_header_titleleft"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/sky"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <!-- Second TextView -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nav_header_titleright"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Button -->
+        <Button
+            android:id="@+id/downloadQR"
+            android:layout_width="224dp"
+            android:layout_height="90dp"
+            android:text="Download QR" />
+
+    </LinearLayout>
+</FrameLayout>

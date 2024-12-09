@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- Single selectable item group -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+    </group>
+
+    <!-- Non-selectable items group -->
+    <group android:checkableBehavior="none">
+        <!-- Website Item -->
+        <item
+            android:id="@+id/nav_website"
+            android:icon="@drawable/ic_website"
+            android:title="Website: s5tech.qrcodepro" />
+
+        <!-- Get API Item -->
+        <item
+            android:id="@+id/nav_get_api"
+            android:icon="@drawable/ic_api"
+            android:title="Get API" />
+
+        <!-- Legal Submenu -->
+        <item
+            android:id="@+id/nav_legal"
+            android:title="Legal">
+            <menu>
+                <item
+                    android:id="@+id/nav_terms_and_conditions"
+                    android:icon="@drawable/ic_terms_and_conditions"
+                    android:title="Terms and Conditions" />
+                <item
+                    android:id="@+id/nav_privacy_policy"
+                    android:icon="@drawable/ic_privacy_policy"
+                    android:title="Privacy Policy" />
+            </menu>
+        </item>
+
+        <!-- Contact Us Submenu -->
+        <item
+            android:id="@+id/nav_contact_us"
+            android:title="Contact Us">
+            <menu>
+                <item
+                    android:id="@+id/nav_email1"
+                    android:icon="@drawable/ic_email"
+                    android:title="s5tech.contactme@gmail.com" />
+                <item
+                    android:id="@+id/nav_email2"
+                    android:icon="@drawable/ic_email"
+                    android:title="feedback.s5tech@gmail.com" />
+            </menu>
+        </item>
+
+        <!-- Social Media Submenu -->
+        <item
+            android:id="@+id/nav_social_media"
+            android:title="Social Media">
+            <menu>
+                <item
+                    android:id="@+id/nav_github"
+                    android:icon="@drawable/ic_github"
+                    android:title="GitHub" />
+                <item
+                    android:id="@+id/nav_linkedin"
+                    android:icon="@drawable/ic_linkedin"
+                    android:title="LinkedIn" />
+                <item
+                    android:id="@+id/nav_instagram"
+                    android:icon="@drawable/ic_instagram"
+                    android:title="Instagram" />
+                <item
+                    android:id="@+id/nav_facebook"
+                    android:icon="@drawable/ic_facebook"
+                    android:title="Facebook" />
+            </menu>
+        </item>
+    </group>
+</menu>

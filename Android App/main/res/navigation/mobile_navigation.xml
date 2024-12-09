@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+
+<!--    Home fragement-->
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.s5tech.qrcodepro.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+
+<!--   Website Home and API Documentation-->
+    <fragment
+        android:id="@+id/nav_website"
+        android:name="com.s5tech.qrcodepro.ui.web.QRcodeProWebFragment"
+        android:label="@string/menu_website"
+        tools:layout="@layout/fragment_q_rcode_pro_web" />
+    <fragment
+        android:id="@+id/nav_get_api"
+        android:name="com.s5tech.qrcodepro.ui.web.ApiFragment"
+        android:label="@string/menu_api"
+        tools:layout="@layout/fragment_api" />
+
+
+
+<!--    services-->
+    <fragment
+        android:id="@+id/nav_textQR"
+        android:name="com.s5tech.qrcodepro.ui.qr_services.qr_textFragment"
+        android:label="@string/generate_qr"
+        tools:layout="@layout/fragment_qr_text" />
+    <fragment
+        android:id="@+id/nav_urlQR"
+        android:name="com.s5tech.qrcodepro.ui.qr_services.qr_urlFragment"
+        android:label="@string/generate_qr"
+        tools:layout="@layout/fragment_qr_url" />
+    <fragment
+        android:id="@+id/nav_emailQR"
+        android:name="com.s5tech.qrcodepro.ui.qr_services.qr_emailFragment"
+        android:label="@string/generate_qr"
+        tools:layout="@layout/fragment_qr_email" />
+    <fragment
+        android:id="@+id/nav_callQR"
+        android:name="com.s5tech.qrcodepro.ui.qr_services.qr_callFragment"
+        android:label="@string/generate_qr"
+        tools:layout="@layout/fragment_qr_call" />
+    <fragment
+        android:id="@+id/nav_whatsappQR"
+        android:name="com.s5tech.qrcodepro.ui.qr_services.qr_whatsappFragment"
+        android:label="@string/generate_qr"
+        tools:layout="@layout/fragment_qr_whatsapp" />
+    <fragment
+        android:id="@+id/nav_locationQR"
+        android:name="com.s5tech.qrcodepro.ui.qr_services.qr_locationFragment"
+        android:label="@string/generate_qr"
+        tools:layout="@layout/fragment_qr_location" />
+    <fragment
+        android:id="@+id/nav_downloadQR"
+        android:name="com.s5tech.qrcodepro.ui.qr_services.download_qrFragment"
+        android:label="@string/download_qr"
+        tools:layout="@layout/fragment_download_qr" />
+
+<!--      Legal Decleration     -->
+
+    <fragment
+        android:id="@+id/nav_terms_and_conditions"
+        android:name="com.s5tech.qrcodepro.ui.legal.TermsAndConditionsFragment"
+        android:label="@string/menu_terms_and_conditions"
+        tools:layout="@layout/fragment_terms_and_conditions" />
+    <fragment
+        android:id="@+id/nav_privacy_policy"
+        android:name="com.s5tech.qrcodepro.ui.legal.PrivacyPolicyFragment"
+        android:label="@string/menu_privacy_policy"
+        tools:layout="@layout/fragment_privacy_policy" />
+
+
+<!--    Contact emails-->
+    <fragment
+        android:id="@+id/nav_email1"
+        android:name="com.s5tech.qrcodepro.ui.contact_us.Email1Fragment"
+        android:label="@string/menu_email"
+        tools:layout="@layout/fragment_email1" />/>
+    <fragment
+        android:id="@+id/nav_email2"
+        android:name="com.s5tech.qrcodepro.ui.contact_us.Email2Fragment"
+        android:label="@string/menu_email"
+        tools:layout="@layout/fragment_email2"
+    />
+
+
+
+<!--    social media-->
+    <fragment
+        android:id="@+id/nav_github"
+        android:name="com.s5tech.qrcodepro.ui.social_media.GitHubFragment"
+        android:label="@string/menu_social_media"
+        tools:layout="@layout/fragment_git_hub"
+        />
+    <fragment
+        android:id="@+id/nav_linkedin"
+        android:name="com.s5tech.qrcodepro.ui.social_media.linkedInFragment"
+        android:label="@string/menu_social_media"
+        tools:layout="@layout/fragment_linked_in"
+        />
+    <fragment
+        android:id="@+id/nav_instagram"
+        android:name="com.s5tech.qrcodepro.ui.social_media.InstagramFragment"
+        android:label="@string/menu_social_media"
+        tools:layout="@layout/fragment_instagram"
+        />
+    <fragment
+        android:id="@+id/nav_facebook"
+        android:name="com.s5tech.qrcodepro.ui.social_media.FacebookFragment"
+        android:label="@string/menu_social_media"
+        tools:layout="@layout/fragment_facebook"
+        />
+
+</navigation>
